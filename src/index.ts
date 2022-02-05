@@ -12,7 +12,7 @@ const getSubLinkStatus = async (urls: string[]) => {
 
 const extractLink = async (url: string) => {
   try {
-    const pattern = new RegExp('href="' + url + "[^#][a-zA-Z0-9-]+", "g");
+    const pattern = new RegExp('href="' + url + "[^#][a-z0-9-]+", "gi");
     const scanned = new Set();
 
     // Get homepage
@@ -30,6 +30,7 @@ const extractLink = async (url: string) => {
         statusCode: [link.status],
       });
     });
+    console.log(scanned);
     return scanned;
   } catch (error) {
     console.log(error);
