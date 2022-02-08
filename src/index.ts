@@ -59,7 +59,6 @@ const extractLink = async (url: string) => {
       );
       scanned.push(...statuses);
     }
-    console.log(scanned);
     return scanned;
   } catch (error) {
     console.log(error);
